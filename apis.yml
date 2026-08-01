@@ -1,7 +1,26 @@
 aid: propagate
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/propagate.png
 name: Propagate
-description: Propagate is a company surfaced as a portfolio company of 500-global and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: Propagate (Propagate Brands) is an e-commerce accelerator and equity syndication
+  platform founded by JD Jernigan and backed by 500 Global. It partners with early-stage
+  direct-to-consumer brands selling on Shopify and Amazon — typically those under $1M in
+  annual revenue and overlooked by larger aggregators — providing working capital plus
+  growth marketing, branding, data collection, customer service, and supply-chain support
+  to help them scale and reach acquisition-ready exits. It simultaneously lets individual
+  investors take equity stakes in these growing private commerce brands to earn passive
+  income. Propagate operates as a services-and-investment business rather than a software
+  company and publishes no public developer API, SDK, or technical platform surface.
 url: https://raw.githubusercontent.com/api-evangelist/propagate/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +30,15 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- E-Commerce
+- Direct-to-Consumer
+- Shopify
+- Accelerator
+- Investment
+- Growth Marketing
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,3 +48,8 @@ maintainers:
 common:
 - type: Website
   url: https://propagatebrands.com
+x-enrichment:
+  date: '2026-07-20'
+  status: minimal
+  artifacts_added: 0
+  pass: local-v1
