@@ -20,7 +20,10 @@ description: Propagate (Propagate Brands) is an e-commerce accelerator and equit
   to help them scale and reach acquisition-ready exits. It simultaneously lets individual
   investors take equity stakes in these growing private commerce brands to earn passive
   income. Propagate operates as a services-and-investment business rather than a software
-  company and publishes no public developer API, SDK, or technical platform surface.
+  company and publishes no public developer API, SDK, or technical platform surface. As of
+  August 2026 its website is also no longer reachable — propagatebrands.com and its www
+  host resolve to Webflow's shared proxy but abort the TLS handshake, and archived captures
+  show the site returning 403/404 since mid-2024 and a parked lander page by August 2025.
 url: https://raw.githubusercontent.com/api-evangelist/propagate/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -30,7 +33,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-08-13'
 tags:
 - Company
 - E-Commerce
@@ -46,10 +49,35 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/propagate-domain-security.yml
 - type: Website
   url: https://propagatebrands.com
 x-enrichment:
-  date: '2026-07-20'
+  date: '2026-08-13'
   status: minimal
-  artifacts_added: 0
+  artifacts_added: 2
   pass: local-v1
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    propagatebrands.com and www.propagatebrands.com still resolve to Webflow's shared
+    proxy but abort every TLS handshake with an internal error, so not one HTTP response
+    came back — and the Wayback record shows the site 403/404ing since July 2024 and
+    serving a 545-byte parked lander by August 2025, with no api/app/docs/developers
+    subdomain, GitHub org, or package-registry presence anywhere.
+  evidence:
+  - url: https://propagatebrands.com/
+    status: 0
+  - url: https://www.propagatebrands.com/
+    status: 0
+  - url: http://propagatebrands.com/
+    status: 301
+  - url: https://propagatebrands.com/openapi.json
+    status: 0
+  - url: https://propagatebrands.com/.well-known/agent-card.json
+    status: 0
+  - url: http://web.archive.org/web/20250806030036/http://propagatebrands.com/
+    status: 200
+  checked: '2026-08-13'
