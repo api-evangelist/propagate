@@ -1,0 +1,94 @@
+generated: '2026-08-13'
+method: probed
+source: live HTTPS probes of every host named in apis.yml
+name: Propagate — .well-known probe
+description: >-
+  Probe record for standard /.well-known/ discovery documents on every host this
+  company controls. Every request failed at the TLS layer: both propagatebrands.com
+  and www.propagatebrands.com resolve to Webflow's shared proxy
+  (proxy-ssl.webflow.com) but abort the handshake with a TLSv1 internal error
+  (SSL alert 80), so no HTTP response — not even a 404 — was ever returned. This is
+  a recorded ABSENCE, not a presence: no WellKnown or SecurityTxt pointer is emitted
+  in apis.yml, because nothing was served.
+hosts:
+- propagatebrands.com
+- www.propagatebrands.com
+probes:
+- path: /.well-known/security.txt
+  host: propagatebrands.com
+  status: 0
+  result: tls-handshake-failed
+  file: null
+- path: /.well-known/security.txt
+  host: www.propagatebrands.com
+  status: 0
+  result: tls-handshake-failed
+  file: null
+- path: /.well-known/openid-configuration
+  host: propagatebrands.com
+  status: 0
+  result: tls-handshake-failed
+  file: null
+- path: /.well-known/openid-configuration
+  host: www.propagatebrands.com
+  status: 0
+  result: tls-handshake-failed
+  file: null
+- path: /.well-known/oauth-authorization-server
+  host: propagatebrands.com
+  status: 0
+  result: tls-handshake-failed
+  file: null
+- path: /.well-known/oauth-authorization-server
+  host: www.propagatebrands.com
+  status: 0
+  result: tls-handshake-failed
+  file: null
+- path: /.well-known/api-catalog
+  host: propagatebrands.com
+  status: 0
+  result: tls-handshake-failed
+  file: null
+- path: /.well-known/api-catalog
+  host: www.propagatebrands.com
+  status: 0
+  result: tls-handshake-failed
+  file: null
+- path: /.well-known/ai-plugin.json
+  host: propagatebrands.com
+  status: 0
+  result: tls-handshake-failed
+  file: null
+- path: /.well-known/ai-plugin.json
+  host: www.propagatebrands.com
+  status: 0
+  result: tls-handshake-failed
+  file: null
+- path: /.well-known/agent-card.json
+  host: propagatebrands.com
+  status: 0
+  result: tls-handshake-failed
+  file: null
+- path: /.well-known/agent-card.json
+  host: www.propagatebrands.com
+  status: 0
+  result: tls-handshake-failed
+  file: null
+- path: /.well-known/agent.json
+  host: propagatebrands.com
+  status: 0
+  result: tls-handshake-failed
+  file: null
+- path: /.well-known/agent.json
+  host: www.propagatebrands.com
+  status: 0
+  result: tls-handshake-failed
+  file: null
+summary:
+  probed: 14
+  hits: 0
+  documents_saved: 0
+  pointer_emitted: false
+  note: >-
+    Zero 200s. The origin never completed a TLS handshake, so this is an
+    unreachable-host result rather than a 404 result. No pointer is wired.
